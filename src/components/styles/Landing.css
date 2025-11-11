@@ -148,61 +148,6 @@
   pointer-events: none;
   z-index: 2;
 }
-.character-model-photo {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: visible;
-}
-.portrait-image {
-  position: relative;
-  height: 92%;
-  max-height: 90vh;
-  object-fit: contain;
-  object-position: bottom center;
-  z-index: 3;
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6))
-    drop-shadow(-30px 10px 50px rgba(255, 69, 48, 0.25))
-    drop-shadow(30px -10px 50px rgba(30, 58, 138, 0.3));
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 70%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  pointer-events: none;
-  user-select: none;
-}
-.portrait-glow {
-  position: absolute;
-  width: 65%;
-  height: 80%;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.75;
-}
-.portrait-glow-warm {
-  background: radial-gradient(
-    circle at 70% 50%,
-    #ff4530 0%,
-    rgba(255, 69, 48, 0.4) 40%,
-    transparent 75%
-  );
-  left: -10%;
-  bottom: 5%;
-}
-.portrait-glow-cool {
-  background: radial-gradient(
-    circle at 30% 50%,
-    #1e3a8a 0%,
-    rgba(30, 58, 138, 0.5) 40%,
-    transparent 75%
-  );
-  right: -10%;
-  top: 5%;
-}
 .character-hover {
   position: absolute;
   width: 280px;
