@@ -42,12 +42,13 @@ const setCharacter = (
               }
             };
 
-            const tintMesh = (mesh: THREE.Mesh, hex: number) => {
+            const collectMaterials = (
+              mesh: THREE.Mesh
+            ): { mat: THREE.Material; index: number }[] => {
               if (Array.isArray(mesh.material)) {
-                mesh.material.forEach((m) => tintMaterial(m, hex));
-              } else {
-                tintMaterial(mesh.material, hex);
+                return mesh.material.map((mat, index) => ({ mat, index }));
               }
+              return mesh.material ? [{ mat: mesh.material, index: 0 }] : [];
             };
 
             character.traverse((child: any) => {
@@ -57,22 +58,24 @@ const setCharacter = (
                 child.receiveShadow = true;
                 mesh.frustumCulled = true;
 
-                const meshName = (mesh.name || "").toLowerCase();
-                const matNames = (Array.isArray(mesh.material)
-                  ? mesh.material
-                  : [mesh.material]
-                )
-                  .map((m: any) => (m?.name || "").toLowerCase())
-                  .join(" ");
-                const probe = `${meshName} ${matNames}`;
+                const meshName = mesh.name || "";
+                const mats = collectMaterials(mesh);
 
-                if (/shirt|top|jacket|hoodie|tshirt|cloth_top|upper/.test(probe)) {
-                  tintMesh(mesh, SHIRT_COLOR);
-                } else if (
-                  /pant|trouser|jean|leg|cloth_bottom|lower/.test(probe)
-                ) {
-                  tintMesh(mesh, PANTS_COLOR);
-                }
+                console.log(
+                  "[character mesh]",
+                  meshName,
+                  "→ materials:",
+                  mats.map((m) => (m.mat as any)?.name || "(unnamed)")
+                );
+
+                mats.forEach(({ mat }) => {
+                  const matName = ((mat as any)?.name || "").toLowerCase();
+                  if (/shirt|tshirt|jacket|hoodie/.test(matName)) {
+                    tintMaterial(mat, SHIRT_COLOR);
+                  } else if (/pant|trouser|jean/.test(matName)) {
+                    tintMaterial(mat, PANTS_COLOR);
+                  }
+                });
               }
             });
             resolve(gltf);
