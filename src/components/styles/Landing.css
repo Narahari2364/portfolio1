@@ -15,7 +15,7 @@
 .landing-circle1 {
   top: 60%;
   left: 0%;
-  z-index: 15;
+  z-index: 1;
   position: fixed;
   width: 550px;
   height: 550px;
@@ -54,7 +54,7 @@
   top: 0%;
   right: 0%;
   transform: translate(40%, -30%);
-  z-index: 9;
+  z-index: 1;
   position: fixed;
   display: none;
   width: 550px;
