@@ -28,8 +28,22 @@ const setCharacter = (
           async (gltf) => {
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);
-            const SHIRT_COLOR = 0xa8d5a8;
-            const PANTS_COLOR = 0x3e2723;
+            const palette: Array<{ pattern: RegExp; hex: number }> = [
+              { pattern: /shirt|tshirt|jacket|hoodie|cloth_top|cloth_up/, hex: 0xa8d5a8 },
+              { pattern: /pant|trouser|jean|cloth_bottom|cloth_low/, hex: 0x3e2723 },
+              { pattern: /shoe|boot|sneaker|sandal/, hex: 0x1a120a },
+              { pattern: /sock/, hex: 0xf5f5f5 },
+              { pattern: /belt/, hex: 0x2a1a10 },
+              { pattern: /hair|fur|brow/, hex: 0x3a2418 },
+              { pattern: /tooth|teeth/, hex: 0xfafafa },
+              { pattern: /tongue|gum/, hex: 0xe88a96 },
+              { pattern: /lip|mouth/, hex: 0xc97064 },
+              { pattern: /iris/, hex: 0x4a2a14 },
+              { pattern: /pupil/, hex: 0x000000 },
+              { pattern: /eye|sclera|cornea/, hex: 0xfafafa },
+              { pattern: /nail/, hex: 0xe8b692 },
+              { pattern: /skin|face|body|head|arm|hand|leg|foot|ear|neck/, hex: 0xe8b692 },
+            ];
 
             const tintMaterial = (
               material: THREE.Material | undefined,
@@ -44,11 +58,9 @@ const setCharacter = (
 
             const collectMaterials = (
               mesh: THREE.Mesh
-            ): { mat: THREE.Material; index: number }[] => {
-              if (Array.isArray(mesh.material)) {
-                return mesh.material.map((mat, index) => ({ mat, index }));
-              }
-              return mesh.material ? [{ mat: mesh.material, index: 0 }] : [];
+            ): THREE.Material[] => {
+              if (Array.isArray(mesh.material)) return mesh.material;
+              return mesh.material ? [mesh.material] : [];
             };
 
             character.traverse((child: any) => {
@@ -58,22 +70,22 @@ const setCharacter = (
                 child.receiveShadow = true;
                 mesh.frustumCulled = true;
 
-                const meshName = mesh.name || "";
+                const meshName = (mesh.name || "").toLowerCase();
                 const mats = collectMaterials(mesh);
 
                 console.log(
                   "[character mesh]",
-                  meshName,
+                  mesh.name,
                   "→ materials:",
-                  mats.map((m) => (m.mat as any)?.name || "(unnamed)")
+                  mats.map((m: any) => m?.name || "(unnamed)")
                 );
 
-                mats.forEach(({ mat }) => {
+                mats.forEach((mat) => {
                   const matName = ((mat as any)?.name || "").toLowerCase();
-                  if (/shirt|tshirt|jacket|hoodie/.test(matName)) {
-                    tintMaterial(mat, SHIRT_COLOR);
-                  } else if (/pant|trouser|jean/.test(matName)) {
-                    tintMaterial(mat, PANTS_COLOR);
+                  const probe = `${matName} ${meshName}`;
+                  const match = palette.find((p) => p.pattern.test(probe));
+                  if (match) {
+                    tintMaterial(mat, match.hex);
                   }
                 });
               }
