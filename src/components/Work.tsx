@@ -6,6 +6,45 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
+const projects = [
+  {
+    name: "Stock Market ETL Pipeline",
+    category: "Data Engineering",
+    tools: "Python, PostgreSQL, Alpha Vantage API, ETL",
+    image: "/images/placeholder.webp",
+  },
+  {
+    name: "Portfolio Website",
+    category: "Web Development",
+    tools: "React, TypeScript, Three.js, GSAP, Vite",
+    image: "/images/placeholder.webp",
+  },
+  {
+    name: "Bus Ticket System",
+    category: "Backend Application",
+    tools: "Python, MySQL, OOP",
+    image: "/images/placeholder.webp",
+  },
+  {
+    name: "Crop Cover",
+    category: "Web Application",
+    tools: "JavaScript, HTML5, CSS3",
+    image: "/images/placeholder.webp",
+  },
+  {
+    name: "1947 Indian Restaurant",
+    category: "Web Design",
+    tools: "HTML5, CSS3, JavaScript",
+    image: "/images/placeholder.webp",
+  },
+  {
+    name: "Guessing Game",
+    category: "Java Application",
+    tools: "Java, OOP, Console I/O",
+    image: "/images/placeholder.webp",
+  },
+];
+
 const Work = () => {
   useGSAP(() => {
   let translateX: number = 0;
