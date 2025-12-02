@@ -129,7 +129,7 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>ENGINEER</h3>
+              <h3>DATA ENGINEER</h3>
               <h4>Description</h4>
               <p>
                 Designing scalable data pipelines, ETL processes, and cloud
