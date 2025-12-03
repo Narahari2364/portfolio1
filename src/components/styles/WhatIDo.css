@@ -391,3 +391,12 @@
     line-height: 6.8rem;
   }
 }
+
+.what-border1,
+.what-border2,
+.what-content::before,
+.what-content::after,
+.what-corner::before,
+.what-corner::after {
+  display: none;
+}
