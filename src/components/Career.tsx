@@ -15,16 +15,19 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>B.S. Information Technology</h4>
-                <h5>Northeastern University</h5>
+                <h4>Software Developer Intern</h4>
+                <h5>Cognifyz Technologies · Remote</h5>
               </div>
-              <h3>2023</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Began undergraduate studies in Boston with a focus on data
-              engineering, full-stack development, and cloud technologies.
-              Built a foundation in Python, Java, SQL, and modern web stacks
-              while exploring algorithms and systems design.
+              Built 4 Java applications (Task Manager, Temperature Converter,
+              Guessing Game, Pyramid Pattern) applying core OOP principles—
+              encapsulation, getter/setter methods, and constructor-based
+              initialization. Implemented full CRUD operations with ArrayList
+              and Scanner-driven menus, and applied structured techniques
+              (nested loops, conditional validation, method extraction) for
+              clean, reusable code. Skills: Java, Control Flow, Module Design.
             </p>
           </div>
           <div className="career-info-box">
