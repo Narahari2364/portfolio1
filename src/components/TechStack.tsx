@@ -12,21 +12,32 @@ import {
 } from "@react-three/rapier";
 
 const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+
+const techStack: { url: string; count: number }[] = [
+  { url: "/images/react2.webp", count: 2 },
+  { url: "/images/next2.webp", count: 2 },
+  { url: "/images/node2.webp", count: 2 },
+  { url: "/images/express.webp", count: 2 },
+  { url: "/images/mongo.webp", count: 2 },
+  { url: "/images/mysql.webp", count: 2 },
+  { url: "/images/typescript.webp", count: 2 },
+  { url: "/images/javascript.webp", count: 2 },
+  { url: "/images/git.webp", count: 2 },
+  { url: "/images/docker.webp", count: 2 },
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+const textures = techStack.map((tech) => textureLoader.load(tech.url));
+
+const sphereTextureIndex: number[] = [];
+techStack.forEach((tech, texIndex) => {
+  for (let i = 0; i < tech.count; i++) {
+    sphereTextureIndex.push(texIndex);
+  }
+});
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = sphereTextureIndex.map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -193,7 +204,7 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[sphereTextureIndex[i]]}
               isActive={isActive}
             />
           ))}
