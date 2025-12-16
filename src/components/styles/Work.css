@@ -127,6 +127,39 @@
 .work-info > p {
   width: 100%;
 }
+.work-description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #c9c9c9 !important;
+  margin: 4px 0 12px !important;
+}
+
+.work-link-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: linear-gradient(135deg, #ff4530 0%, #1e3a8a 100%);
+  color: #fff;
+  z-index: 2;
+  opacity: 0.85;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.work-box.has-link:hover .work-link-badge {
+  opacity: 1;
+  transform: rotate(-15deg) scale(1.08);
+  box-shadow: 0 8px 24px -4px rgba(255, 69, 48, 0.5),
+    0 8px 24px -4px rgba(30, 58, 138, 0.5);
+}
 
 .work-image {
   display: flex;
