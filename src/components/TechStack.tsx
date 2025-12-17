@@ -14,16 +14,22 @@ import {
 const textureLoader = new THREE.TextureLoader();
 
 const techStack: { url: string; count: number }[] = [
+  { url: "/images/javascript.webp", count: 2 },
+  { url: "/images/typescript.webp", count: 2 },
   { url: "/images/react2.webp", count: 2 },
   { url: "/images/next2.webp", count: 2 },
   { url: "/images/node2.webp", count: 2 },
-  { url: "/images/express.webp", count: 2 },
-  { url: "/images/mongo.webp", count: 2 },
+  { url: "/images/python.png", count: 2 },
+  { url: "/images/java.png", count: 2 },
+  { url: "/images/html5.png", count: 2 },
+  { url: "/images/css3.png", count: 2 },
   { url: "/images/mysql.webp", count: 2 },
-  { url: "/images/typescript.webp", count: 2 },
-  { url: "/images/javascript.webp", count: 2 },
   { url: "/images/git.png", count: 2 },
   { url: "/images/docker.png", count: 2 },
+  { url: "/images/aws.png", count: 2 },
+  { url: "/images/azure.png", count: 2 },
+  { url: "/images/powerbi.png", count: 2 },
+  { url: "/images/excel.png", count: 2 },
 ];
 
 const textures = techStack.map((tech) => textureLoader.load(tech.url));
