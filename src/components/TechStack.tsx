@@ -22,8 +22,8 @@ const techStack: { url: string; count: number }[] = [
   { url: "/images/mysql.webp", count: 2 },
   { url: "/images/typescript.webp", count: 2 },
   { url: "/images/javascript.webp", count: 2 },
-  { url: "/images/git.webp", count: 2 },
-  { url: "/images/docker.webp", count: 2 },
+  { url: "/images/git.png", count: 2 },
+  { url: "/images/docker.png", count: 2 },
 ];
 
 const textures = techStack.map((tech) => textureLoader.load(tech.url));
