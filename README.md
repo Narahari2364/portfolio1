@@ -1,65 +1,126 @@
-# My Portfolio Website - Overview 🚀
+# Narahari BN — Portfolio
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+A personal portfolio website built to showcase my work as a Software Developer and Data Engineering enthusiast. It features an interactive 3D character, scroll-driven animations, a physics-based tech stack, and clean responsive sections that walk through who I am, what I do, and what I've built.
 
----
-
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
+> **Hello, I'm Narahari BN** — a passionate Developer / Data Engineer pursuing a B.S. in Information Technology at Northeastern University (Class of 2027). I focus on building scalable data pipelines, ETL processes, and cloud solutions on AWS and Azure, while bringing a full-stack engineering perspective to every project.
 
 ---
 
-## 🛠️ Instructions
+## Sections
 
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
-
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
-
----
-
-## ⚙️ Tech Stack
-
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
+- **Landing** — Animated hero with 3D character and rotating tagline
+- **About** — Short intro and background
+- **What I Do** — Two focus areas: Develop and Data Engineer
+- **Career & Experience** — Timeline of internship, projects, and current focus
+- **Work** — Featured projects (Stock Market ETL Pipeline live demo + more)
+- **Tech Stack** — Interactive physics-based scene with all my tools
+- **Contact** — Email, phone, GitHub, LinkedIn, LeetCode
 
 ---
 
-## 🎨 Assets Usage
+## Tech Stack
 
-Some 3D assets included in this repository are free to use for learning purposes.
+**Frontend & Languages**
+- React 18 · TypeScript · JavaScript · HTML5 · CSS3
+- Vite (build tool)
 
-However:
+**3D & Animations**
+- Three.js · @react-three/fiber · @react-three/drei
+- @react-three/rapier (physics) · @react-three/postprocessing
+- GSAP (with ScrollTrigger)
+- Lenis (smooth scrolling)
 
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
+**Data Engineering & Cloud (in my work, not the site itself)**
+- Python · SQL · PostgreSQL · MySQL · Pandas · SQLAlchemy
+- AWS · Azure · Power BI · Excel
+- Docker · GitHub Actions · Streamlit · Great Expectations
 
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+**Other**
+- Git · Java · `react-icons` · `react-fast-marquee`
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## Run Locally
+
+### Prerequisites
+- Node.js 18+ and npm
+- Git
+
+### Setup
+
+```bash
+git clone <this-repo-url>
+cd Portfolio-Website-main
+npm install
+npm run dev
+```
+
+The dev server runs on `http://localhost:5173` (Vite default).
+
+### Other scripts
+
+```bash
+npm run build     # Type-check and build for production
+npm run preview   # Preview the production build locally
+npm run lint      # Run ESLint
+```
 
 ---
 
-## 📄 License
+## Project Structure
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+```
+Portfolio-Website-main/
+├── public/
+│   ├── images/              Tech stack logos (React, Python, AWS, etc.)
+│   ├── models/              3D scene assets (HDR environment, character)
+│   └── fonts/               Custom typography
+├── src/
+│   ├── components/
+│   │   ├── Character/       3D character scene (Three.js)
+│   │   ├── styles/          Component-scoped CSS
+│   │   ├── Landing.tsx      Hero with animated name & tagline
+│   │   ├── About.tsx        Bio section
+│   │   ├── WhatIDo.tsx      Develop / Data Engineer cards
+│   │   ├── Career.tsx       Experience timeline
+│   │   ├── Work.tsx         Project grid with live links
+│   │   ├── TechStack.tsx    Physics-based skill spheres
+│   │   ├── Contact.tsx      Contact form section
+│   │   ├── SocialIcons.tsx  GitHub / LinkedIn / LeetCode
+│   │   ├── Navbar.tsx       Top navigation
+│   │   └── Loading.tsx      Initial load screen
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── package.json
+└── vite.config.ts
+```
 
-See the LICENSE file for full details
+---
+
+## Featured Project
+
+### [Stock Market ETL Pipeline](https://stock-market-etl-pipeline-5rp9gkvb5jlekm9tcasqqw.streamlit.app)
+
+End-to-end automated system tracking 17 stocks across 7 sectors. ML predicts next-day prices (~70–75% accuracy), generates real-time buy/sell signals, validates 2,900+ daily records, and ships alerts via Email & Slack.
+
+**Tools:** Python · PostgreSQL · Docker · Streamlit · Pandas · SQLAlchemy · Great Expectations · GitHub Actions
+
+---
+
+## Contact
+
+- **Email:** [bheemaganapallinar.n@northeastern.edu](mailto:bheemaganapallinar.n@northeastern.edu)
+- **Phone:** +1 857 351 5640
+- **GitHub:** [Narahari2364](https://github.com/Narahari2364)
+- **LinkedIn:** [narahari-bn](https://www.linkedin.com/in/narahari-bn-435488284/)
+- **LeetCode:** [Narahari_bn](https://leetcode.com/u/Narahari_bn/)
+
+---
+
+## Credits
+
+Designed and developed by **Narahari BN** · 2026
+
+Built on top of an open-source portfolio template, then heavily customized — content, branding, color palette, character lighting, project sections, contact info, and the full tech stack scene have all been rewritten to reflect my own work.
 
