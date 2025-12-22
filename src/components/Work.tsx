@@ -24,14 +24,6 @@ const projects: Project[] = [
     link: "https://stock-market-etl-pipeline-5rp9gkvb5jlekm9tcasqqw.streamlit.app",
   },
   {
-    name: "Portfolio Website",
-    category: "Web Development",
-    description:
-      "Animated, interactive personal portfolio with a 3D character, smooth scroll, and cinematic lighting—built from the ground up with React, Three.js, and GSAP.",
-    tools: "React, TypeScript, Three.js, GSAP, Vite",
-    image: "/images/placeholder.webp",
-  },
-  {
     name: "Bus Ticket System",
     category: "Backend Application",
     description:
