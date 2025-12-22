@@ -24,22 +24,6 @@ const projects: Project[] = [
     link: "https://stock-market-etl-pipeline-5rp9gkvb5jlekm9tcasqqw.streamlit.app",
   },
   {
-    name: "Bus Ticket System",
-    category: "Backend Application",
-    description:
-      "Object-oriented bus reservation system with seat management, booking flow, and persistent storage—demonstrating modular OOP design.",
-    tools: "Python, MySQL, OOP",
-    image: "/images/placeholder.webp",
-  },
-  {
-    name: "Crop Cover",
-    category: "Web Application",
-    description:
-      "Web application focused on agriculture and crop coverage information, built with vanilla web technologies for fast load times.",
-    tools: "JavaScript, HTML5, CSS3",
-    image: "/images/placeholder.webp",
-  },
-  {
     name: "1947 Indian Restaurant",
     category: "Web Design",
     description:
