@@ -31,14 +31,6 @@ const projects: Project[] = [
     tools: "HTML5, CSS3, JavaScript",
     image: "/images/placeholder.webp",
   },
-  {
-    name: "Guessing Game",
-    category: "Java Application",
-    description:
-      "Console-based number guessing game in Java showcasing control flow, input validation, and clean modular method design.",
-    tools: "Java, OOP, Console I/O",
-    image: "/images/placeholder.webp",
-  },
 ];
 
 const Work = () => {
